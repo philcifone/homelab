@@ -152,7 +152,6 @@ su - phil
 - Framework: Hugo
 
 #### Hugo commands:
-<br>
 
 test server before pushing live
 ```shell
