@@ -1,23 +1,23 @@
-#[Proxmox VE] - .179:8006
+# [Proxmox VE] - .179:8006
 
-###storage
+### Storage
 
 - catalyst - 18TB, ZFS
 - magellan - 3TB, ZFS
 - smb-catalyst - 7500TB
 - smb-magellan - 512GB 
 
-###backups
+### Backups
 
 - snapshots of all containers at 0300; 15:30 to smb-magellan
 - snapshots of all containers at 15:00 to local
 
-###cronjob
+### Cronjob
 
 - rsync local container backup push to /gamehenge/computer
 
 
-###Debian/Ubuntu Container Startup:
+### Debian/Ubuntu Container Startup:
 
 ```shell
 adduser phil
@@ -33,7 +33,7 @@ sudo apt update && sudo apt dist-upgrade -y
 sudo apt install vim sudo git rsync htop
 ```
 
-###Arch Container Startup:
+### Arch Container Startup:
 
 ```shell
 pacman-key --init
@@ -51,7 +51,7 @@ EDITOR=vim visudo <uncomment sudo for wheel users>
 su - phil
 ```
 
-##Container List
+## Container List
 
     100 photoprism - photo database - .189:2342
         Distro: Debian
@@ -92,7 +92,7 @@ su - phil
     109 gamehenge.tk - web server (offline)
 
 
-##Storage
+## Storage
 
         /mnt/magellan - (4) 1TB disks
         RAIDz1 - 3TB
@@ -104,7 +104,7 @@ su - phil
         - plex: direct
         - filebrowser: direct
 
-####references:
+#### references:
 learnlinuxTV
 homelab.show
 networkchuck
