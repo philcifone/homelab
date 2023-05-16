@@ -36,32 +36,44 @@ adduser phil
 ```shell
 passwd phil
 ```
+```shell
 usermod -aG sudo phil
-
+```
+```shell
 su - phil
-
+```
+```shell
+```
 sudo apt update && sudo apt dist-upgrade -y
-
-sudo apt install vim sudo git rsync htop
+```shell
+sudo apt install vim sudo git rsync htop neofetch
 ```
 
 ### Arch Container Startup:
 
 ```shell
 pacman-key --init
-
+```
+```shell
 pacman-key --populate
-
+```
+```shell
 pacman-key --refresh-keys
-
+```
+```shell
 pacman -Syu vim sudo git rsync htop neofetch
-
+```
+```shell
 useradd -m -g users -G wheel phil
-
+```
+```shell
 passwd phil
-
-EDITOR=vim visudo <uncomment sudo for wheel users>
-
+```
+```shell
+EDITOR=vim visudo 
+```
+(uncomment wheel entry for sudo access)
+```shell
 su - phil
 ```
 
@@ -71,8 +83,9 @@ su - phil
 - Distro: Debian
 - Storage: /mnt/catalyst - 1TB = direct
 - notes:
-  cronjob rsync catalyst pull from gamehenge analog
-  magical config file: /var/lib/photoprism/.env
+	- built with a tteck script
+	- cronjob rsync catalyst pull from gamehenge analog
+	- magical config file: /var/lib/photoprism/.env
 
 ### 101 wireguard - personal VPN
 - Distro: Ubuntu
@@ -98,7 +111,13 @@ su - phil
 - Distro: Arch
 - Web server: Nginx
 - Framework: Hugo
-
+- Hugo commands:
+```shell
+hugo server --baseURL 10.0.0.144 --bind 10.0.0.144
+```
+```shell
+hugo new blog/<title.md>
+```
 
 ### 108 - web server
 (offline / in development)
