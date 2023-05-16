@@ -29,6 +29,7 @@
 
 
 ## Debian/Ubuntu Container Startup:
+<br>
 
 add user phil
 ```shell
@@ -46,55 +47,70 @@ add phil to sudo group
 ```shell
 usermod -aG sudo phil
 ```
+<br>
 
 login to phil
-
 ```shell
 su - phil
 ```
+<br>
 
 system update && upgrade
-
 ```shell
 sudo apt update && sudo apt dist-upgrade -y
 ```
+<br>
 
 install packages
-
 ```shell
 sudo apt install vim sudo git rsync htop neofetch
 ```
 
 ## Arch Container Startup:
+<br>
 
 initalize package keyring
 ```shell
 pacman-key --init
 ```
+<br>
+
 populate keyring
 ```shell
 pacman-key --populate
 ```
+<br>
+
 refresh keyring
 ```shell
 pacman-key --refresh-keys
 ```
+<br>
+
 update system and install packages
 ```shell
 pacman -Syu vim sudo git rsync htop neofetch base-devel
 ```
+<br>
+
 add user phil
 ```shell
 useradd -m -g users -G wheel phil
 ```
+<br>
+
 set password for phil
 ```shell
 passwd phil
 ```
-(uncomment wheel entry for sudo access)
+<br>
+
+uncomment wheel entry for sudo access
 ```shell
 EDITOR=vim visudo 
 ```
+<br>
+
 login to phil
 ```shell
 su - phil
