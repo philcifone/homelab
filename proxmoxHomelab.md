@@ -120,6 +120,7 @@ login to phil
 ```shell
 su - phil
 ```
+<br>
 
 ## Container List
 
@@ -155,7 +156,7 @@ su - phil
 - Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
 
 
-### 106 philcifone.com - web server - .144:1313
+### 106 [philcifone.com](https://philcifone.com) - web server - .144:1313
 - Distro: Arch
 - Web server: Nginx
 - Framework: Hugo
@@ -195,6 +196,7 @@ sudo hugo
 
 ### 109 - web server (offline)
 (offline / in development)
+<br>
 
 #### references & links:
 - learnlinuxTV - Jay Lacroix
