@@ -163,8 +163,6 @@ su - phil
 - Firewall: 
 	- ssh 10.0.0.55/32, 10.0.0.187/32
 	- https global
-- notes:
-	- see hugoStuff.md (in progress)
 
 #### Hugo commands:
 
