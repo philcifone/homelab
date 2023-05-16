@@ -204,7 +204,7 @@ sudo hugo
 - homelab.show
 - networkchuck
 - unix & linux system administration handbook
-- all Linux no starch press publications
+- pretty much every Linux no starch press publication
 
 ##### ZFS drive replacement
 - https://docs.tritondatacenter.com/private-cloud/troubleshooting/disk-replacement
