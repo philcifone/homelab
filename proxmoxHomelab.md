@@ -18,20 +18,21 @@
 #### smb-magellan 
 - 512GB (CT 104 filebrowser)
 
-### Backups
+## Backups
 
 - snapshots of all containers at 0300; 1530 to smb-magellan
 - snapshots of all containers at 1500 to local
 
-### Firewalls
+#### cronjobs
+
+- rsync backup push to 10.0.0.187/gamehenge/computer
+
+## Firewalls
 
 - icmp (ping) 10.0.0.55/32
 - tcp (web interface) global :8006
 - ssh (secure shell) 10.0.0.55/32, 10.0.0.187/32
 
-### Cronjobs
-
-- rsync local container backup push to /gamehenge/computer
 
 
 ## Debian/Ubuntu Container Startup:
