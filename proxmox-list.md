@@ -150,6 +150,8 @@ su - phil
 - Distro: Arch
 - Web server: Nginx
 - Framework: Hugo
+- notes:
+	- see hugoStuff.md (in progress)
 
 #### Hugo commands:
 
