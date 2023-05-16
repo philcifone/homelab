@@ -56,4 +56,4 @@
 
 2023-05-05: Added admin permissions for phil@pam node user, and generated authentication keys for root@pam and phil@pam. Still cant get phil to stay logged in. I disabled root ssh login, which also disabled phil@pam ssh login for some reson. Recovery keys are also generated and stored on gamehenge. The source of authority.
 
-
+2023-05-06ish: added firewall rules for proxmox and containers to prevent lateral movement. details in proxmoxHomelab.
