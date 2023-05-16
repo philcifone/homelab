@@ -73,6 +73,7 @@ passwd phil
 EDITOR=vim visudo 
 ```
 (uncomment wheel entry for sudo access)
+
 ```shell
 su - phil
 ```
