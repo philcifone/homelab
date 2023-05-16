@@ -176,5 +176,5 @@ sudo hugo
 - unix & linux system administration handbook
 - all Linux no starch press publications
 
-#####ZFS drive replacement
+##### ZFS drive replacement
 - https://docs.tritondatacenter.com/private-cloud/troubleshooting/disk-replacement
