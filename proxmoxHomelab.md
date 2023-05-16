@@ -32,8 +32,7 @@
 - icmp (ping) 10.0.0.55/32
 - tcp (web interface) global :8006
 - ssh (secure shell) 10.0.0.55/32, 10.0.0.187/32
-
-
+<br>
 
 ## Debian/Ubuntu Container Startup:
 
@@ -71,6 +70,7 @@ install packages
 ```shell
 sudo apt install vim sudo git rsync htop neofetch
 ```
+<br>
 
 ## Arch Container Startup:
 
