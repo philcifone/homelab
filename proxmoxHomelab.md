@@ -25,7 +25,7 @@
 
 #### cronjobs
 
-- rsync backup push to 10.0.0.187/gamehenge/computer
+- rsync backup push from local to 10.0.0.187/gamehenge/computer
 
 ## Firewalls
 
@@ -112,7 +112,7 @@ passwd phil
 ```
 <br>
 
-uncomment wheel entry for sudo access
+uncomment wheel entry for sudo privledges
 ```shell
 EDITOR=vim visudo 
 ```
