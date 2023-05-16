@@ -30,9 +30,9 @@
 
 ## Firewalls
 
-- icmp (ping) 10.0.0.55/32
+- icmp (ping) 10.0.0.xx/32
 - tcp (web interface) global :8006
-- ssh (secure shell) 10.0.0.55/32, 10.0.0.187/32
+- ssh (secure shell) 10.0.0.xx/32, 10.0.0.xxx/32
 <br>
 
 ## Debian/Ubuntu Container Startup:
@@ -128,7 +128,7 @@ su - phil
 ### 100 photoprism - photo database - .189:2342
 - Distro: Debian
 - Storage: /mnt/catalyst - 1TB = direct
-- Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
+- Firewall: ssh 10.0.0.xx/32, 10.0.0.xx/32
 - notes:
 	- built with a tteck script
 	- cronjob rsync catalyst pull from gamehenge analog
@@ -136,13 +136,13 @@ su - phil
 
 ### 101 wireguard - personal VPN
 - Distro: Ubuntu
-- Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
+- Firewall: ssh 10.0.0.xx/32, 10.0.0.xxx/32
 
 
 ### 103 plex - media server - .128:32400 
 - Distro: Ubuntu
 - Storage: /mnt/catalyst - 5TB = direct
-- Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
+- Firewall: ssh 10.0.0.xx/32, 10.0.0.xxx/32
 - cronjob:
 	- rsync catalyst push to gamehenge ISOs
 	- rsync catalyst pull from gamehenge movies
@@ -154,7 +154,7 @@ su - phil
 - Contents0: Mirror of (most of) /Volumes/Gamhenge from .187
 - Storage1: /mnt/magellan - 512GB = direct > smb
 - Contents1: Snapshot images of containers
-- Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
+- Firewall: ssh 10.0.0.xx/32, 10.0.0.xxx/32
 
 
 ### 106 [philcifone.com](https://philcifone.com) - web server - .144:1313
@@ -162,7 +162,7 @@ su - phil
 - Web server: Nginx
 - Framework: Hugo
 - Firewall: 
-	- ssh 10.0.0.55/32, 10.0.0.187/32
+	- ssh 10.0.0.xx/32, 10.0.0.xxx/32
 	- https global
 
 #### Hugo commands:
