@@ -158,6 +158,9 @@ hugo server --baseURL 10.0.0.144 --bind 10.0.0.144
 ```shell
 hugo new blog/<title.md>
 ```
+```shell
+sudo hugo
+```
 
 ### 108 - web server
 (offline / in development)
@@ -166,11 +169,12 @@ hugo new blog/<title.md>
 (offline / in development)
 
 #### references & links:
-learnlinuxTV
-homelab.show
-networkchuck
-unix & linux system administration handbook
-all Linux no starch press publications
+- learnlinuxTV - Jay Lacroix
+- lawrence systems - Tom Lawrence
+- homelab.show
+- networkchuck
+- unix & linux system administration handbook
+- all Linux no starch press publications
 
-ZFS DRIVE REPLACEMENT IF NEEDED
-https://docs.tritondatacenter.com/private-cloud/troubleshooting/disk-replacement
+#####ZFS drive replacement
+- https://docs.tritondatacenter.com/private-cloud/troubleshooting/disk-replacement
