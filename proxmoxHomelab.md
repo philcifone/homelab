@@ -35,7 +35,7 @@
 - ssh (secure shell) 10.0.0.xx/32, 10.0.0.xxx/32
 <br>
 
-## Debian/Ubuntu Container Startup:
+## Debian/Ubuntu LXC Container Startup:
 
 add user phil
 ```shell
@@ -73,7 +73,7 @@ sudo apt install vim sudo git rsync htop neofetch
 ```
 <br>
 
-## Arch Container Startup:
+## Arch LXC Container Startup:
 
 initalize package keyring
 ```shell
@@ -123,7 +123,7 @@ su - phil
 ```
 <br>
 
-## Container List
+## LXC Container List
 
 ### 100 photoprism - photo database - .189:2342
 - Distro: Debian
