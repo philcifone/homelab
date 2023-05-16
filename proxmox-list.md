@@ -31,26 +31,37 @@
 ## Debian/Ubuntu Container Startup:
 
 add user phil
+
 ```shell
 adduser phil
 ```
+
 set password for phil
+
 ```shell
 passwd phil
 ```
+
 add phil to sudo group
+
 ```shell
 usermod -aG sudo phil
 ```
+
 login to phil
+
 ```shell
 su - phil
 ```
+
 system update && upgrade
+
 ```shell
 sudo apt update && sudo apt dist-upgrade -y
 ```
+
 install packages
+
 ```shell
 sudo apt install vim sudo git rsync htop neofetch
 ```
