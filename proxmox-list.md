@@ -151,13 +151,28 @@ su - phil
 - Web server: Nginx
 - Framework: Hugo
 
-Hugo commands:
+#### Hugo commands:
+<br>
+
+test server before pushing live
 ```shell
 hugo server --baseURL 10.0.0.144 --bind 10.0.0.144
 ```
+<br>
+
+new blog, automatically created inside "content" directory
 ```shell
 hugo new blog/<title.md>
 ```
+<br>
+
+open blog to edit in vim
+```shell
+sudo vim content/blog/<title.md>
+```
+<br>
+
+push live
 ```shell
 sudo hugo
 ```
