@@ -2,12 +2,21 @@
 
 ### Storage
 
-- local
-- local-lvm
-- catalyst - 18TB, ZFS
-- magellan - 3TB, ZFS
-- smb-catalyst - 7500TB (CT 104 filebrowser)
-- smb-magellan - 512GB (CT 104 filebrowser)
+#### local
+
+#### local-lvm
+- Thin provisioned:
+
+#### magellan - (4) 1TB disks
+- RAIDz1 - 3TB
+
+#### catalyst - (4) 6TB disks
+- RAIDz1 - 18TB
+
+#### smb-catalyst 
+- 7500TB (CT 104 filebrowser)
+#### smb-magellan 
+- 512GB (CT 104 filebrowser)
 
 ### Backups
 
@@ -70,9 +79,9 @@ su - phil
 - Distro: Ubuntu
 - Storage: /mnt/catalyst - 5TB = direct
 - notes:
-  cronjob rsync catalyst push to gamehenge ISOs
-  cronjob rsync catalyst pull from gamehenge movies
-  cronjob rsync catalyst pull from gamehenge shows
+	- cronjob rsync catalyst push to gamehenge ISOs
+	- cronjob rsync catalyst pull from gamehenge movies
+	- cronjob rsync catalyst pull from gamehenge shows
 
 ### 104 filebrowser & samba file share - .164:8080
 - Distro: Debian
@@ -96,15 +105,15 @@ su - phil
 
 ## Storage
 
-        /mnt/magellan - (4) 1TB disks
-        RAIDz1 - 3TB
-        - proxmox container backups: smb
-        - amandalampel.com: direct
+### /mnt/magellan - (4) 1TB disks
+- RAIDz1 - 3TB
+- proxmox container backups: smb
+- amandalampel.com: direct
 
-        /mnt/catalyst - (4) 6TB disks
-        RAIDz1 - 18TB
-        - plex: direct
-        - filebrowser: direct
+###/mnt/catalyst - (4) 6TB disks
+- RAIDz1 - 18TB
+- plex: direct
+- filebrowser: direct
 
 #### references:
 learnlinuxTV
