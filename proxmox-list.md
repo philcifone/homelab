@@ -1,6 +1,6 @@
-# [Proxmox VE] - .179:8006
+# Proxmox VE - .179:8006
 
-### Storage
+## Storage
 
 #### local
 
@@ -32,9 +32,10 @@
 
 ```shell
 adduser phil
-
+```
+```shell
 passwd phil
-
+```
 usermod -aG sudo phil
 
 su - phil
@@ -50,6 +51,8 @@ sudo apt install vim sudo git rsync htop
 pacman-key --init
 
 pacman-key --populate
+
+pacman-key --refresh-keys
 
 pacman -Syu vim sudo git rsync htop neofetch
 
@@ -97,25 +100,13 @@ su - phil
 - Framework: Hugo
 
 
-### 108 amandalampel.com - web server
-(offline)
+### 108 - web server
+(offline / in development)
 
-### 109 gamehenge.tk - web server (offline)
-(offline)
+### 109 - web server (offline)
+(offline / in development)
 
-## Storage
-
-### /mnt/magellan - (4) 1TB disks
-- RAIDz1 - 3TB
-- proxmox container backups: smb
-- amandalampel.com: direct
-
-###/mnt/catalyst - (4) 6TB disks
-- RAIDz1 - 18TB
-- plex: direct
-- filebrowser: direct
-
-#### references:
+#### references & links:
 learnlinuxTV
 homelab.show
 networkchuck
