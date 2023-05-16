@@ -1,0 +1,159 @@
+2023-02: OpenMediaVault install in VM
+
+2023-02: Plex "linux iso" container server setup
+    500gb from magellan
+    ssh keys between phils mac mini (10.0.0.187) and daily cronjob for yt-dlp updates
+
+2023-02: Wireguard-VPN container server setup
+    config for linuxbook-arch & phils iphone
+
+2023-02-23: Attempt domain tunnel to proxmox but scrapped
+
+2023-02-23: Remove Ubuntu Mate and openSUSE VMs Kept Debian
+
+2023-02-23: PhotoPrism LXC script install
+    RAM 4GB > 2GB post install. CPU 4 > 2 post install
+    Removed due to script concerns/LVM issues
+
+2023-02-25: pve lvgroup extended LVM with second onboard mac mini drive to 64gb
+
+2023-02-26: figured out issue with shared folders and permissions for file browser and setup accounts
+
+2023-02-26: installed photoprism on OpenMediaVault instead of proxmox
+
+2023-02-26: domain tunnel made for proxmox and other servers. 
+    No TLS Verify turned on.
+    proxmox.spacetaxi.cc - 10.0.0.179:8006
+    omv.spacetaxi.cc - 10.0.0.65:#
+    files.spacetaxi.cc - 10.0.0.65:3670
+    photo.spacetaxi.cc - 10.0.0.65:2342
+
+2023-02-26: setup syncthing between archbook / mac mini / photoprism-omv for export updates
+
+2023-03-12: borked OMV setup trying to change the partition size.
+
+2023-03-12: installed photoprism and filebrowser in separate containers, gave each 500GB on magellan for now at '/mnt/magellan"
+
+2023-03-12: borked nextcloud, had security issues anyway. redid with proxmox helper script. 
+
+2023-03-16: CT 100, 101, 103, and 104 have backups scheduled at 21:00 daily. Executes on HDT timezone. Set up cronjob to move backup files to gamehenge.
+
+2023-03-17: installed more storage (catalyst, 18TB usable RAIDz1-RAID5) 4 6TB drives OWV Quad Elite Pro USB-C->USB 3.0
+
+2023-03-24: created samba share CT with catalyst as main storage
+
+2023-03-28: crowdsec install - attempt on PVE but repository install failed. installed on 104-filebrowser.
+
+2023-04-08: Big day. Finally got webserver up and running. Was tricky. Debian was too out of date for Hugo and themes. Then messed up the ports, I think. Eventually retraced my steps and got nginx back on arch. /etc/nginx/nginx.conf was the culprit I belive, along with /etc/sites-available, philcifone.cc/config.toml
+    106 - philcifone.cc - main ; arch container
+    105 - philcifone.cc2 - "backup" of /var/www/philcifone.cc ; ubuntu container (since been removed)
+
+2023-04-12: I was sure I misconfigured the nginx somehow, didn't know how but was sure. I think Docker messed me up. I was trying to make sure I had SSL because I wasn't sure I did. I followed the arch wiki ssl cert commands for the nginx page. Then had to comment out the https section of the /etc/nginx/nginx.conf and input the correct cert file names and point to the directory (ssl/<name>). I stopped docker and now it's fixed.
+
+2023-04-12: Added samba shares from 102 (10.0.0.7) to proxmox as storage and switched backups from local to smb, updated cronjob as well.
+
+2023-04-16: Tried to add filebrowser to samba container but didn't like the way it ran in the foreground. Added samba to filebrowser instead for consolidation and less layers, easier access and freed up the other samba storage. Started file transfer. Will make this main copy of Gamehenge.
+
+2023-05-05: Added admin permissions for phil@pam node user, and generated authentication keys for root@pam and phil@pam. Still cant get phil to stay logged in. I disabled root ssh login, which also disabled phil@pam ssh login for some reson. Recovery keys are also generated and stored on gamehenge. The source of authority.
+
+
+
+#[Proxmox VE] - .179:8006
+
+    cronjob - rsync local container backup push to /gamehenge/computer
+
+###Debian/Ubuntu Container Startup:
+
+adduser phil
+
+passwd phil
+
+usermod -aG sudo phil
+
+su - phil
+
+sudo apt update && sudo apt dist-upgrade -y
+
+sudo apt install vim sudo git rsync htop
+
+
+###Arch Container Startup:
+
+pacman-key --init
+
+pacman-key --populate
+
+
+pacman -Syu vim sudo git rsync htop
+
+
+useradd -m -g users -G wheel phil
+
+passwd phil
+
+EDITOR=vim visudo
+
+# uncomment sudo for wheel users
+
+su - phil
+
+
+##Container List
+
+
+    100 photoprism - photo database - .189:2342
+        Distro: Debian
+	Storage: /mnt/catalyst - 1TB = direct
+	notes:
+	 cronjob rsync catalyst pull from gamehenge analog
+	 magical config file: /var/lib/photoprism/.env
+
+    101 wireguard - personal VPN
+        Distro: Ubuntu
+
+
+    103 plex - media server - .128:32400 
+        Distro: Ubuntu
+	Storage: /mnt/catalyst - 5TB = direct
+	notes:
+	 cronjob rsync catalyst push to gamehenge ISOs
+	 cronjob rsync catalyst pull from gamehenge movies
+	 cronjob rsync catalyst pull from gamehenge shows
+
+    104 filebrowser & samba file share - .164:8080
+        Distro: Debian
+        Storage0: /mnt/catalyst - 5TB = direct > smb
+	Contents0: Mirror of (most of) /Volumes/Gamhenge from .187
+        Storage1: /mnt/magellan - 512GB = direct > smb
+	Contents1: Snapshot images of containers
+
+
+    106 philcifone.com - web server - .144:1313
+        Distro: Arch
+        Web server: Nginx
+        Framework: Hugo
+
+
+    108 amandalampel.com - web server (offline)
+
+
+    109 gamehenge.tk - web server (offline)
+
+
+##Storage
+
+	/mnt/magellan - (4) 1TB disks
+	RAIDz1 - 3TB
+	- proxmox container backups: smb
+	- amandalampel.com: direct
+	
+	/mnt/catalyst - (4) 6TB disks
+	RAIDz1 - 18TB
+	- plex: direct
+	- filebrowser: direct
+
+references:
+learnlinuxTV
+
+ZFS DRIVE REPLACEMENT IF NEEDED
+https://docs.tritondatacenter.com/private-cloud/troubleshooting/disk-replacement
