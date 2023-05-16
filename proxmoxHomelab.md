@@ -168,7 +168,7 @@ su - phil
 
 #### Hugo commands:
 
-test server before pushing live
+test server changes before pushing live
 ```shell
 hugo server --baseURL 10.0.0.144 --bind 10.0.0.144
 ```
