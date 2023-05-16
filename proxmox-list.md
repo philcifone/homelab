@@ -43,8 +43,8 @@ usermod -aG sudo phil
 su - phil
 ```
 ```shell
-```
 sudo apt update && sudo apt dist-upgrade -y
+```
 ```shell
 sudo apt install vim sudo git rsync htop neofetch
 ```
@@ -69,10 +69,10 @@ useradd -m -g users -G wheel phil
 ```shell
 passwd phil
 ```
+(uncomment wheel entry for sudo access)
 ```shell
 EDITOR=vim visudo 
 ```
-(uncomment wheel entry for sudo access)
 
 ```shell
 su - phil
