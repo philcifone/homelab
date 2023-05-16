@@ -6,8 +6,8 @@
 - local-lvm
 - catalyst - 18TB, ZFS
 - magellan - 3TB, ZFS
-- smb-catalyst - 7500TB
-- smb-magellan - 512GB 
+- smb-catalyst - 7500TB (CT 104 filebrowser)
+- smb-magellan - 512GB (CT 104 filebrowser)
 
 ### Backups
 
