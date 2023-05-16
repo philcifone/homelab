@@ -2,28 +2,29 @@
 
 ## Storage
 
-#### local
+**local**
 
-#### local-lvm
+**local-lvm**
 - Thin provisioned:
 
-#### magellan - (4) 1TB disks
+**magellan** - (4) 1TB disks
 - RAIDz1 - 3TB
 
-#### catalyst - (4) 6TB disks
+**catalyst** - (4) 6TB disks
 - RAIDz1 - 18TB
 
-#### smb-catalyst 
+**smb-catalyst** 
 - 7500TB (CT 104 filebrowser)
-#### smb-magellan 
+
+**smb-magellan** 
 - 512GB (CT 104 filebrowser)
 
 ## Backups
 
-- snapshots of all containers at 0300; 1530 to smb-magellan
+- up to 15 daily,weekly, monthly, and yearly snapshots of all containers at 0300; 1530 to smb-magellan
 - snapshots of all containers at 1500 to local
 
-#### cronjobs
+**cronjobs**
 
 - rsync backup push from local to 10.0.0.187/gamehenge/computer
 
@@ -142,10 +143,10 @@ su - phil
 - Distro: Ubuntu
 - Storage: /mnt/catalyst - 5TB = direct
 - Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
-- notes:
-	- cronjob rsync catalyst push to gamehenge ISOs
-	- cronjob rsync catalyst pull from gamehenge movies
-	- cronjob rsync catalyst pull from gamehenge shows
+- cronjob:
+	- rsync catalyst push to gamehenge ISOs
+	- rsync catalyst pull from gamehenge movies
+	- rsync catalyst pull from gamehenge shows
 
 ### 104 filebrowser & samba file share - .164:8080
 - Distro: Debian
