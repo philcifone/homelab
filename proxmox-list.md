@@ -31,19 +31,18 @@
 ## Debian/Ubuntu Container Startup:
 
 add user phil
-
 ```shell
 adduser phil
 ```
+<br>
 
 set password for phil
-
 ```shell
 passwd phil
 ```
+<br>
 
 add phil to sudo group
-
 ```shell
 usermod -aG sudo phil
 ```
