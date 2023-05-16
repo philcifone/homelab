@@ -23,7 +23,13 @@
 - snapshots of all containers at 0300; 1530 to smb-magellan
 - snapshots of all containers at 1500 to local
 
-### Cronjob
+### Firewalls
+
+- icmp (ping) 10.0.0.55/32
+- tcp (web interface) global :8006
+- ssh (secure shell) 10.0.0.55/32, 10.0.0.187/32
+
+### Cronjobs
 
 - rsync local container backup push to /gamehenge/computer
 
@@ -121,6 +127,7 @@ su - phil
 ### 100 photoprism - photo database - .189:2342
 - Distro: Debian
 - Storage: /mnt/catalyst - 1TB = direct
+- Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
 - notes:
 	- built with a tteck script
 	- cronjob rsync catalyst pull from gamehenge analog
@@ -128,11 +135,13 @@ su - phil
 
 ### 101 wireguard - personal VPN
 - Distro: Ubuntu
+- Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
 
 
 ### 103 plex - media server - .128:32400 
 - Distro: Ubuntu
 - Storage: /mnt/catalyst - 5TB = direct
+- Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
 - notes:
 	- cronjob rsync catalyst push to gamehenge ISOs
 	- cronjob rsync catalyst pull from gamehenge movies
@@ -144,12 +153,16 @@ su - phil
 - Contents0: Mirror of (most of) /Volumes/Gamhenge from .187
 - Storage1: /mnt/magellan - 512GB = direct > smb
 - Contents1: Snapshot images of containers
+- Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
 
 
 ### 106 philcifone.com - web server - .144:1313
 - Distro: Arch
 - Web server: Nginx
 - Framework: Hugo
+- Firewall: 
+	- ssh 10.0.0.55/32, 10.0.0.187/32
+	- https global
 - notes:
 	- see hugoStuff.md (in progress)
 
