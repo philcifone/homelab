@@ -28,44 +28,56 @@
 - rsync local container backup push to /gamehenge/computer
 
 
-### Debian/Ubuntu Container Startup:
+## Debian/Ubuntu Container Startup:
 
+add user phil
 ```shell
 adduser phil
 ```
+set password for phil
 ```shell
 passwd phil
 ```
+add phil to sudo group
 ```shell
 usermod -aG sudo phil
 ```
+login to phil
 ```shell
 su - phil
 ```
+system update && upgrade
 ```shell
 sudo apt update && sudo apt dist-upgrade -y
 ```
+install packages
 ```shell
 sudo apt install vim sudo git rsync htop neofetch
 ```
 
-### Arch Container Startup:
+## Arch Container Startup:
 
+initalize package keyring
 ```shell
 pacman-key --init
 ```
+populate keyring
 ```shell
 pacman-key --populate
 ```
+refresh keyring
 ```shell
 pacman-key --refresh-keys
 ```
+update system and install packages
 ```shell
-pacman -Syu vim sudo git rsync htop neofetch
+pacman -Syu vim sudo git rsync htop neofetch base-devel
 ```
+add user phil
 ```shell
 useradd -m -g users -G wheel phil
 ```
+set password for phil
 ```shell
 passwd phil
 ```
@@ -73,7 +85,7 @@ passwd phil
 ```shell
 EDITOR=vim visudo 
 ```
-
+login to phil
 ```shell
 su - phil
 ```
@@ -112,7 +124,8 @@ su - phil
 - Distro: Arch
 - Web server: Nginx
 - Framework: Hugo
-- Hugo commands:
+
+Hugo commands:
 ```shell
 hugo server --baseURL 10.0.0.144 --bind 10.0.0.144
 ```
