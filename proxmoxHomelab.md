@@ -36,7 +36,6 @@
 
 
 ## Debian/Ubuntu Container Startup:
-<br>
 
 add user phil
 ```shell
@@ -74,7 +73,6 @@ sudo apt install vim sudo git rsync htop neofetch
 ```
 
 ## Arch Container Startup:
-<br>
 
 initalize package keyring
 ```shell
