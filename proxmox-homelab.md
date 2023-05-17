@@ -30,7 +30,7 @@
 
 ## Firewalls
 
-- icmp (ping) 10.0.0.xx/32
+- icmp (ping) 10.0.0.55/32
 - tcp (web interface) global :8006
 - ssh (secure shell) 10.0.0.55/32, 10.0.0.187/32
 <br>
@@ -55,21 +55,20 @@ usermod -aG sudo phil
 ```
 <br>
 
-login to phil
-```shell
-su - phil
-```
-<br>
-
 system update && upgrade
 ```shell
-sudo apt update && sudo apt dist-upgrade -y
+apt update && apt dist-upgrade -y
 ```
 <br>
-
 install packages
 ```shell
 sudo apt install vim sudo git rsync htop neofetch
+```
+<br>
+
+login to phil
+```shell
+su - phil
 ```
 <br>
 
@@ -162,7 +161,7 @@ su - phil
 - Web server: Nginx
 - Framework: Hugo
 - Firewall: 
-	- ssh 10.0.0.xx/32, 10.0.0.xxx/32
+	- ssh 10.0.0.55/32, 10.0.0.187/32
 	- https global
 
 #### Hugo commands:
