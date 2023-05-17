@@ -63,7 +63,7 @@ apt update && apt dist-upgrade -y
 
 install packages
 ```shell
-sudo apt install vim sudo git rsync htop neofetch
+apt install vim sudo git rsync htop neofetch
 ```
 <br>
 
