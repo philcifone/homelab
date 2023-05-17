@@ -60,6 +60,7 @@ system update && upgrade
 apt update && apt dist-upgrade -y
 ```
 <br>
+
 install packages
 ```shell
 sudo apt install vim sudo git rsync htop neofetch
