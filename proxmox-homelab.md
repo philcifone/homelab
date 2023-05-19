@@ -157,7 +157,8 @@ su - phil
 - Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
 
 
-### 106 [philcifone.com](https://philcifone.com) - web server - .144:1313
+### 106 [philcifone.com](https://philcifone.com) - prod web server - .144:1313
+Production web server for linode instance that is public facing.
 - Distro: Arch
 - Web server: Nginx
 - Framework: Hugo

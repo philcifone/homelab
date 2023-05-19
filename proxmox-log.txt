@@ -58,5 +58,6 @@
 
 2023-05-06ish: added firewall rules for proxmox and containers to prevent lateral movement. details in proxmoxHomelab.
 
+2023-05-19: moved website to linode/akamai. Took 5 minutes, not even. Sent website files, nginx config, ssl certs, downloaded hugo, and updated A records on cloudflare. much faster, even though it's on a "nanode". They must have better internet.
 
 
