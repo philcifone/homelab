@@ -1,5 +1,7 @@
 # Proxmox VE - .179:8006
 
+![homelab diagram](/phils-homelab.jpg)
+
 ## Storage
 
 **local**
