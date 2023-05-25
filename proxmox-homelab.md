@@ -187,10 +187,16 @@ sudo vim content/blog/<title.md>
 ```
 <br>
 
-push live
+push to linode server
+```shell
+sudo rsync -avP --delete --exclude=public * root@xxx.xxx.xxx.xxx:/var/www/philcifone.com/
+```
+
+generate new site on linode server
 ```shell
 sudo hugo
 ```
+
 
 ### 108 - web server
 (offline / in development)
