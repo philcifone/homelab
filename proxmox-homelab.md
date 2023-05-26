@@ -169,12 +169,6 @@ Production web server for linode instance that is public facing.
 
 #### Hugo commands:
 
-test server changes before pushing live, and set url for browser use
-```shell
-hugo server --baseURL 10.0.0.144 --bind 10.0.0.144
-```
-<br>
-
 new blog, automatically created inside "content" directory
 ```shell
 hugo new blog/<title.md>
@@ -184,6 +178,12 @@ hugo new blog/<title.md>
 open blog to edit in vim
 ```shell
 sudo vim content/blog/<title.md>
+```
+<br>
+
+test server changes before pushing live, and set url for browser use
+```shell
+hugo server --baseURL 10.0.0.144 --bind 10.0.0.144
 ```
 <br>
 
