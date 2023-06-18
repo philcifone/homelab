@@ -1,12 +1,17 @@
-# Proxmox VE - .179:8006
+---
+Title: homelab
+---
+<br>
 
+# proxmox VE - .179:8006
+<br>
 
-## Storage
+## storage
+<br>
 
 **local**
 
 **local-lvm**
-- Thin provisioned:
 
 **magellan** - (4) 1TB disks
 - RAIDz1 - 3TB
@@ -15,12 +20,12 @@
 - RAIDz1 - 18TB
 
 **smb-catalyst** 
-- 7500TB (CT 104 filebrowser)
+- 7.5TB (CT 104 filebrowser)
 
 **smb-magellan** 
 - 512GB (CT 104 filebrowser)
 
-## Backups
+## backups
 
 - up to 15 daily, weekly, monthly, and yearly snapshots of all containers at 0300; 1530 to smb-magellan
 - snapshots of all containers at 1500 to local
@@ -29,7 +34,7 @@
 
 - rsync backup push from local to 10.0.0.187/gamehenge/computer
 
-## Firewalls
+## firewalls
 
 - icmp (ping) 10.0.0.55/32
 - tcp (web interface) global :8006
@@ -64,7 +69,7 @@ apt update && apt dist-upgrade -y
 
 install packages
 ```shell
-apt install vim sudo git rsync htop neofetch
+apt install vim sudo git rsync htop neofetch curl wget
 ```
 <br>
 
@@ -96,7 +101,7 @@ pacman-key --refresh-keys
 
 update system and install packages
 ```shell
-pacman -Syu vim sudo git rsync htop neofetch base-devel
+pacman -Syu vim sudo git rsync htop neofetch base-devel curl wget
 ```
 <br>
 
@@ -195,15 +200,21 @@ sudo hugo
 - Contents1: Snapshot images of containers
 - Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
 
+### 105 - trilium notes
+
 
 ### 106 OLD [philcifone.com](https://philcifone.com) - OLD prod web server - .144:1313
 (offline) - contains unused themes, may use this for testing other themes.
+
+### 107 - pi-hole
 
 ### 108 - web server
 (offline / in development)
 
 ### 109 - web server (offline)
 (offline / in development)
+
+### 110 - homepage
 <br>
 
 #### references & links:
