@@ -69,7 +69,7 @@ apt update && apt dist-upgrade -y
 
 install packages
 ```shell
-apt install vim sudo git rsync htop neofetch curl wget
+apt install vim sudo git rsync htop neofetch curl wget python3 python3-pip zip unzip tar xz
 ```
 <br>
 
@@ -101,7 +101,7 @@ pacman-key --refresh-keys
 
 update system and install packages
 ```shell
-pacman -Syu vim sudo git rsync htop neofetch base-devel curl wget
+pacman -Syu vim sudo git rsync htop neofetch curl wget python3 python3-pip zip unzip tar xz
 ```
 <br>
 
