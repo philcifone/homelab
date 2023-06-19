@@ -61,3 +61,5 @@
 2023-05-19: moved website to linode/akamai. Took 5 minutes, not even. Sent website files, nginx config, ssl certs, downloaded hugo, and updated A records on cloudflare. much faster, even though it's on a "nanode". They must have better internet.
 
 2023-06-07: somehow messed up the hugo test server on the local prod CT. Shut that down, and created a new one for prod on CT 102 that pushes to linode/akamai.
+
+2023-06-19: discovered how to attach other network storage directly to proxmox, so I have Gamehenge from MacOS connected to proxmox and am able to use that for the plex library. I may end up redoing my entire storage setup.
