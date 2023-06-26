@@ -63,3 +63,5 @@
 2023-06-07: somehow messed up the hugo test server on the local prod CT. Shut that down, and created a new one for prod on CT 102 that pushes to linode/akamai.
 
 2023-06-19: discovered how to attach other network storage directly to proxmox, so I have Gamehenge from MacOS connected to proxmox and am able to use that for the plex library. I may end up redoing my entire storage setup.
+
+2023-06-26: updated to PVE 8.0, photoprism and pi-hole broke. Rebuilt photoprism. created symlink to network share katahdin for photoprism to keep config file intact. unsure if best practice. trying to build photoprism from source myself on arch.

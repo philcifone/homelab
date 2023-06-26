@@ -3,7 +3,7 @@ Title: homelab
 ---
 <br>
 
-# proxmox VE - .179:8006
+# proxmox VE - :8006
 <br>
 
 ## storage
@@ -19,10 +19,19 @@ Title: homelab
 **catalyst** - (4) 6TB disks
 - RAIDz1 - 18TB
 
-**smb-catalyst** 
+**katahdin** - (2) 2TB NVMe
+- RAID0 - 4TB - on mac-mini
+
+**gamehenge** - (4) 8TB disks
+- RAID5 - 24TB - on mac-mini
+
+**abraxas** - (1) 10TB disk
+- 10TB - on mac-mini
+
+**smb-catalyst** - sunsetting
 - 7.5TB (CT 104 filebrowser)
 
-**smb-magellan** 
+**smb-magellan** - sunsetting
 - 512GB (CT 104 filebrowser)
 
 ## backups
@@ -32,7 +41,7 @@ Title: homelab
 
 **cronjobs**
 
-- rsync backup push from local to 10.0.0.187/gamehenge/computer
+- rsync backup push from local to mac-mini:/gamehenge/computer
 
 ## firewalls
 
@@ -93,7 +102,7 @@ pacman-key --populate
 ```
 <br>
 
-refresh keyring
+sometimes you may need refresh the keyring
 ```shell
 pacman-key --refresh-keys
 ```
@@ -101,7 +110,7 @@ pacman-key --refresh-keys
 
 update system and install packages
 ```shell
-pacman -Syu vim sudo git rsync htop neofetch curl wget python3 python3-pip zip unzip tar xz
+pacman -Syu vim sudo git rsync htop neofetch curl wget python3 zip unzip tar
 ```
 <br>
 
@@ -131,14 +140,14 @@ su - phil
 
 ## LXC Container List
 
-### 100 photoprism - photo database - .189:2342
+### 100 photoprism - photo database - :2342 - BORKED after PVE 8.0 update
 - Distro: Debian
 - Storage: /mnt/catalyst - 1TB = direct
 - Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
 - notes:
 	- built with a tteck script
 	- cronjob rsync catalyst pull from gamehenge analog
-	- magical config file: /var/lib/photoprism/.env
+	- magical config file: /var/lib/photoprism/.env (no longer likes being changed)
 
 ### 101 wireguard - personal VPN
 - Distro: Ubuntu
@@ -206,7 +215,7 @@ sudo hugo
 ### 106 OLD [philcifone.com](https://philcifone.com) - OLD prod web server - .144:1313
 (offline) - contains unused themes, may use this for testing other themes.
 
-### 107 - pi-hole
+### 107 - pi-hole - BORKED after PVE 8.0 update
 
 ### 108 - web server
 (offline / in development)
@@ -216,6 +225,10 @@ sudo hugo
 
 ### 110 - homepage
 <br>
+
+### 112 - photoprism REBUILD
+- Storage: /mnt/katahdin - 2TB = bind mount network share from mac-mini
+- notes: magical config file /var/lib/photoprism/.env did not like my changes. Symlinked mp0 to originals path.
 
 #### references & links:
 - learnlinuxTV - Jay Lacroix
