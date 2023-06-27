@@ -153,7 +153,7 @@ su - phil
 - Distro: Ubuntu
 - Firewall: ssh 10.0.0.55/32, 10.0.0.187/32
 
-### 102 [philcifone.com](https://philcifone.com) - prod web server - .119:1313
+### 102 [philcifone.com](https://philcifone.com) - test web server - .119:1313
 Production web server for linode instance that is public facing. All updates are tested here and then pushed to remote cloud server on Linode.
 - Distro: Arch
 - Web server: Nginx
@@ -161,6 +161,12 @@ Production web server for linode instance that is public facing. All updates are
 - Firewall: 
         - ssh 10.0.0.55/32, 10.0.0.187/32
         - https global
+
+SSL cert for production server made using on live instance:
+
+```shell
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/server.key -out /etc/nginx/ssl/server.crt
+```
 
 #### Hugo commands:
 
